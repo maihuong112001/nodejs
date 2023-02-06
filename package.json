@@ -7,14 +7,26 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "morgan": "^1.10.0",
     "node-sass": "^8.0.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.3"
   },
   "scripts": {
+    "beautiful": "lint-staged",
     "start": "nodemon --inspect src/index.js",
-    "watch":"node-sass --watch src/resources/scss --output src/public/css",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged":{
+    "src/**/*.{js,json,css}":"prettier --single-quote --trailing-comma all --tab-width 4 -write"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
   },
   "author": "",
   "license": "ISC",
