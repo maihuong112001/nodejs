@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.6"
+    "express-handlebars": "^6.0.6",
+    "mongoose": "^6.9.0"
   },
   "name": "blog_node",
   "version": "1.0.0",
@@ -20,12 +21,12 @@
     "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "lint-staged":{
-    "src/**/*.{js,json,css}":"prettier --single-quote --trailing-comma all --tab-width 4 -write"
+  "lint-staged": {
+    "src/**/*.{js,json,css}": "prettier --single-quote --trailing-comma all --tab-width 4 -write"
   },
-  "husky":{
-    "hooks":{
-      "pre-commit":"lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "author": "",
