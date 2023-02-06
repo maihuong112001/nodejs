@@ -5,7 +5,7 @@ const siteControllers=require("../app/controllers/SiteController");
 
 // newControllers.index();
 
-router.use("/search",siteControllers.search);
-router.use("/",siteControllers.index);
+router.get("/search",siteControllers.search);
+router.get("/",siteControllers.index);
 
 module.exports=router;

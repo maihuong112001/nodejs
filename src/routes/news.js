@@ -5,7 +5,7 @@ const newControllers=require("../app/controllers/NewController");
 
 // newControllers.index();
 
-router.use("/:slug",newControllers.show);
-router.use("/",newControllers.index);
+router.get("/:slug",newControllers.show);
+router.get("/",newControllers.index);
 
 module.exports=router;
